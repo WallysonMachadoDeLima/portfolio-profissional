@@ -44,6 +44,18 @@
             font-size: 13px;
             transition: all 0.3s;
         }
+        .book-cover {
+            width: 120px;
+            height: 180px;
+            margin: 0 auto 1.5rem;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .book-card .icon {
+            display: none;
+        }
+        }
         .lang-btn:hover, .lang-btn.active {
             background: var(--accent);
             color: var(--primary);
@@ -99,6 +111,18 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s;
+        }
+        .book-cover {
+            width: 120px;
+            height: 180px;
+            margin: 0 auto 1.5rem;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .book-card .icon {
+            display: none;
+        }
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -183,6 +207,18 @@
             border-radius: 12px;
             border: 1px solid var(--border);
             transition: all 0.3s;
+        }
+        .book-cover {
+            width: 120px;
+            height: 180px;
+            margin: 0 auto 1.5rem;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .book-card .icon {
+            display: none;
+        }
         }
         .book-card:hover {
             border-color: var(--accent);
@@ -374,7 +410,7 @@
         <section>
             <h2>📚 Books that Shaped my Career</h2>
             <div class="books-grid">
-                <div class="book-card"><div class="icon">📖</div><h3>Clean Code</h3><p class="author">Robert C. Martin</p><span class="status">✓ Read & Applied</span></div>
+                <div class="book-card"><img src="https://m.media-amazon.com/images/I/41jEbK-jG+L._AC_UF1000,1000_QL80_.jpg" alt="Clean Code" class="book-cover"><h3>Clean Code</h3><p class="author">Robert C. Martin</p><span class="status">✓ Read <div class="book-card"><div class="icon">📖</div><h3>Clean Code</h3><p class="author">Robert C. Martin</p><span class="status">✓ Read & Applied</span></div> Applied</span></div>
                 <div class="book-card"><div class="icon">📖</div><h3>Clean Architecture</h3><p class="author">Robert C. Martin</p><span class="status">✓ Read & Applied</span></div>
                 <div class="book-card"><div class="icon">📖</div><h3>Design Patterns</h3><p class="author">Gang of Four</p><span class="status">📖 Studying</span></div>
                 <div class="book-card"><div class="icon">📖</div><h3>The Pragmatic Programmer</h3><p class="author">Andrew Hunt & David Thomas</p><span class="status">✓ Read</span></div>
