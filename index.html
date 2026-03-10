@@ -254,6 +254,167 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
+        /* Projects Carousel */
+        .projects-carousel {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card {
+            min-width: 350px;
+            max-width: 350px;
+            margin: 0 1rem;
+            background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--accent);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 30px rgba(247, 129, 102, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.1);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .project-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            background: rgba(247, 129, 102, 0.15);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+
+        .project-links a:hover {
+            color: var(--accent);
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(247, 129, 102, 0.2);
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-btn:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 0 20px rgba(247, 129, 102, 0.5);
+        }
+
+        .carousel-btn.prev { left: 10px; }
+        .carousel-btn.next { right: 10px; }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: var(--accent);
+            transform: scale(1.3);
+            box-shadow: 0 0 10px rgba(247, 129, 102, 0.5);
+        }
+
+        .carousel-dot:hover {
+            background: var(--accent-dark);
+        }
+
+        @media (max-width: 768px) {
+            .project-card {
+                min-width: 300px;
+                max-width: 300px;
+            }
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
         /* Scroll Reveal Animation */
         .reveal {
             opacity: 0;
@@ -744,6 +905,103 @@
                         <span class="skill-tag">CI/CD</span>
                         <span class="skill-tag">AWS/Azure</span>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2>Featured Projects 🚀</h2>
+            <div class="projects-carousel" id="carousel-en">
+                <button class="carousel-btn prev" onclick="moveCarousel('en', -1)"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-container" id="container-en">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop" alt="Dashboard" class="project-image">
+                        <div class="project-content">
+                            <h3>Analytics Dashboard</h3>
+                            <p>Real-time data visualization platform with interactive charts and reports.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">React</span>
+                                <span class="project-tag">Node.js</span>
+                                <span class="project-tag">D3.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop" alt="E-commerce" class="project-image">
+                        <div class="project-content">
+                            <h3>E-Commerce Platform</h3>
+                            <p>Full-stack online store with payment integration and admin panel.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Vue.js</span>
+                                <span class="project-tag">Express</span>
+                                <span class="project-tag">MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=200&fit=crop" alt="Mobile App" class="project-image">
+                        <div class="project-content">
+                            <h3>Task Manager App</h3>
+                            <p>Cross-platform mobile app for team collaboration and project management.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">React Native</span>
+                                <span class="project-tag">Firebase</span>
+                                <span class="project-tag">Redux</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=200&fit=crop" alt="API" class="project-image">
+                        <div class="project-content">
+                            <h3>REST API Gateway</h3>
+                            <p>Scalable API gateway with authentication, rate limiting and caching.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Node.js</span>
+                                <span class="project-tag">Redis</span>
+                                <span class="project-tag">Docker</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=200&fit=crop" alt="Code" class="project-image">
+                        <div class="project-content">
+                            <h3>Code Editor</h3>
+                            <p>Browser-based code editor with syntax highlighting and live preview.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">TypeScript</span>
+                                <span class="project-tag">Monaco</span>
+                                <span class="project-tag">WebSockets</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next" onclick="moveCarousel('en', 1)"><i class="fas fa-chevron-right"></i></button>
+                <div class="carousel-dots" id="dots-en">
+                    <span class="carousel-dot active" onclick="goToSlide('en', 0)"></span>
+                    <span class="carousel-dot" onclick="goToSlide('en', 1)"></span>
+                    <span class="carousel-dot" onclick="goToSlide('en', 2)"></span>
+                    <span class="carousel-dot" onclick="goToSlide('en', 3)"></span>
+                    <span class="carousel-dot" onclick="goToSlide('en', 4)"></span>
                 </div>
             </div>
         </section>
@@ -1294,6 +1552,56 @@
 
         window.addEventListener('scroll', revealOnScroll);
         revealOnScroll();
+
+        // Carousel Functions
+        const carousels = {
+            'en': { currentSlide: 0, totalSlides: 5 },
+            'pt-br': { currentSlide: 0, totalSlides: 5 },
+            'pt': { currentSlide: 0, totalSlides: 5 },
+            'fr': { currentSlide: 0, totalSlides: 5 }
+        };
+
+        function moveCarousel(lang, direction) {
+            const carousel = carousels[lang];
+            if (!carousel) return;
+            
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            } else if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            }
+            
+            updateCarousel(lang);
+        }
+
+        function goToSlide(lang, slideIndex) {
+            const carousel = carousels[lang];
+            if (!carousel) return;
+            
+            carousel.currentSlide = slideIndex;
+            updateCarousel(lang);
+        }
+
+        function updateCarousel(lang) {
+            const container = document.getElementById('container-' + lang);
+            const dots = document.querySelectorAll('#dots-' + lang + ' .carousel-dot');
+            const carousel = carousels[lang];
+            
+            if (container) {
+                container.style.transform = `translateX(-${carousel.currentSlide * 370}px)`;
+            }
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === carousel.currentSlide);
+            });
+        }
+
+        // Auto-play carousels
+        setInterval(() => {
+            moveCarousel('en', 1);
+        }, 5000);
     </script>
 </body>
 </html>
