@@ -27,10 +27,8 @@
             background: var(--primary);
             color: var(--text);
             line-height: 1.6;
-            overflow-x: hidden;
         }
         
-        /* Language Selector */
         .lang-selector {
             position: fixed;
             top: 20px;
@@ -60,7 +58,6 @@
             color: var(--primary);
         }
         
-        /* Header */
         header {
             min-height: 100vh;
             display: flex;
@@ -70,7 +67,6 @@
             padding: 2rem;
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             position: relative;
-            overflow: hidden;
         }
         
         header::before {
@@ -151,38 +147,6 @@
             color: var(--accent);
         }
         
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 999;
-            padding: 1rem 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        nav ul {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: var(--accent);
-        }
-        
-        /* Sections */
         section {
             padding: 6rem 2rem;
             max-width: 1000px;
@@ -207,7 +171,6 @@
             background: var(--accent);
         }
         
-        /* About Section */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -246,7 +209,6 @@
             color: var(--accent);
         }
         
-        /* Books Section */
         .books-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -293,7 +255,6 @@
             font-size: 0.8rem;
         }
         
-        /* Skills Section */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -329,7 +290,6 @@
             border: 1px solid var(--border);
         }
         
-        /* Footer */
         footer {
             text-align: center;
             padding: 3rem 2rem;
@@ -354,7 +314,14 @@
             color: var(--accent);
         }
         
-        /* Responsive */
+        .lang-content {
+            display: none;
+        }
+        
+        .lang-content.active {
+            display: block;
+        }
+        
         @media (max-width: 768px) {
             .header-content h1 {
                 font-size: 2.5rem;
@@ -364,25 +331,6 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            
-            nav ul {
-                gap: 1rem;
-                font-size: 0.8rem;
-            }
-            
-            .lang-selector {
-                top: 10px;
-                right: 10px;
-            }
-        }
-        
-        /* Hidden by default for language switching */
-        .lang-content {
-            display: none;
-        }
-        
-        .lang-content.active {
-            display: block;
         }
     </style>
 </head>
@@ -395,14 +343,13 @@
         <button class="lang-btn" onclick="changeLang('fr', this)">FR</button>
     </div>
 
-    <!-- Portuguese Brazil -->
+    <!-- PORTUGUÊS BRASIL -->
     <div id="lang-pt-br" class="lang-content active">
         <header>
             <div class="header-content">
                 <h1>Wallyson Machado</h1>
-                <p class="subtitle">Full Stack Developer Pleno</p>
+                <p class="subtitle">Desenvolvedor Full Stack Pleno</p>
                 <p class="location">📍 Brasil | 🌍 Disponível para trabalho remoto</p>
-                
                 <div class="cta-buttons">
                     <a href="mailto:wallyson@email.com" class="btn btn-primary">📧 Entre em Contato</a>
                     <a href="https://github.com/WallysonMachadoDeLima" class="btn btn-secondary" target="_blank">💼 Ver Projetos</a>
@@ -412,7 +359,6 @@
 
         <section id="sobre">
             <h2>Sobre Mim</h2>
-            
             <div class="about-grid">
                 <div class="about-card">
                     <h3>🎓 Formação Acadêmica</h3>
@@ -422,7 +368,6 @@
                         <li>Certificações em Cloud Computing e DevOps</li>
                     </ul>
                 </div>
-                
                 <div class="about-card">
                     <h3>💡 Interesses & Hobbies</h3>
                     <ul>
@@ -438,7 +383,6 @@
 
         <section id="livros">
             <h2>📚 Livros que Moldaram minha Carreira</h2>
-            
             <div class="books-grid">
                 <div class="book-card">
                     <div class="icon">📖</div>
@@ -446,35 +390,30 @@
                     <p class="author">Robert C. Martin (Uncle Bob)</p>
                     <span class="status">✓ Lido & Aplicado</span>
                 </div>
-                
                 <div class="book-card">
                     <div class="icon">📖</div>
                     <h3>Arquitetura Limpa</h3>
                     <p class="author">Robert C. Martin</p>
                     <span class="status">✓ Lido & Aplicado</span>
                 </div>
-                
                 <div class="book-card">
                     <div class="icon">📖</div>
                     <h3>Padrões de Projeto (GoF)</h3>
                     <p class="author">Gang of Four</p>
                     <span class="status">📖 Em Estudo</span>
                 </div>
-                
                 <div class="book-card">
                     <div class="icon">📖</div>
                     <h3>O Programador Pragmático</h3>
                     <p class="author">Andrew Hunt & David Thomas</p>
                     <span class="status">✓ Lido</span>
                 </div>
-                
                 <div class="book-card">
                     <div class="icon">📖</div>
                     <h3>Domain-Driven Design</h3>
                     <p class="author">Eric Evans</p>
                     <span class="status">📖 Lendo</span>
                 </div>
-                
                 <div class="book-card">
                     <div class="icon">📖</div>
                     <h3>Refatoração</h3>
@@ -486,7 +425,6 @@
 
         <section id="skills">
             <h2>🛠️ Stack Tecnológico</h2>
-            
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Frontend</h3>
@@ -499,7 +437,6 @@
                         <span class="skill-tag">Tailwind CSS</span>
                     </div>
                 </div>
-                
                 <div class="skill-category">
                     <h3>Backend</h3>
                     <div class="skill-tags">
@@ -511,7 +448,6 @@
                         <span class="skill-tag">GraphQL</span>
                     </div>
                 </div>
-                
                 <div class="skill-category">
                     <h3>Database & DevOps</h3>
                     <div class="skill-tags">
@@ -536,25 +472,403 @@
         </footer>
     </div>
 
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-content">
+        <header>
+            <div class="header-content">
+                <h1>Wallyson Machado</h1>
+                <p class="subtitle">Mid-Level Full Stack Developer</p>
+                <p class="location">📍 Brazil | 🌍 Available for remote work</p>
+                <div class="cta-buttons">
+                    <a href="mailto:wallyson@email.com" class="btn btn-primary">📧 Get in Touch</a>
+                    <a href="https://github.com/WallysonMachadoDeLima" class="btn btn-secondary" target="_blank">💼 View Projects</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="sobre">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>🎓 Academic Background</h3>
+                    <ul>
+                        <li>Systems Analysis and Development (In Progress)</li>
+                        <li>Specialization in Full Stack Web Development</li>
+                        <li>Certifications in Cloud Computing and DevOps</li>
+                    </ul>
+                </div>
+                <div class="about-card">
+                    <h3>💡 Interests & Hobbies</h3>
+                    <ul>
+                        <li>Software Architecture and Design Patterns</li>
+                        <li>IoT and Home Automation</li>
+                        <li>Retro Games and Game Development</li>
+                        <li>Technical Reading and Continuous Learning</li>
+                        <li>Open Source and Dev Community</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="livros">
+            <h2>📚 Books that Shaped my Career</h2>
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>Clean Code</h3>
+                    <p class="author">Robert C. Martin (Uncle Bob)</p>
+                    <span class="status">✓ Read & Applied</span>
+                </div>
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>Clean Architecture</h3>
+                    <p class="author">Robert C. Martin</p>
+                    <span class="status">✓ Read & Applied</span>
+                </div>
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>Design Patterns (GoF)</h3>
+                    <p class="author">Gang of Four</p>
+                    <span class="status">📖 Studying</span>
+                </div>
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>The Pragmatic Programmer</h3>
+                    <p class="author">Andrew Hunt & David Thomas</p>
+                    <span class="status">✓ Read</span>
+                </div>
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>Domain-Driven Design</h3>
+                    <p class="author">Eric Evans</p>
+                    <span class="status">📖 Reading</span>
+                </div>
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>Refactoring</h3>
+                    <p class="author">Martin Fowler</p>
+                    <span class="status">📖 In Queue</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>🛠️ Tech Stack</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Vue.js</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">JavaScript (ES6+)</span>
+                        <span class="skill-tag">HTML5/CSS3</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">C# / .NET</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">GraphQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Database & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/wallysonmachadodelima" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/WallysonMachadoDeLima" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:wallyson@email.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>© 2026 Wallyson Machado de Lima. Built with 💙 and lots of ☕</p>
+        </footer>
+    </div>
+
+    <!-- PORTUGUÊS PORTUGAL -->
+    <div id="lang-pt" class="lang-content">
+        <header>
+            <div class="header-content">
+                <h1>Wallyson Machado</h1>
+                <p class="subtitle">Desenvolvedor Full Stack Sénior</p>
+                <p class="location">📍 Brasil | 🌍 Disponível para trabalho remoto</p>
+                <div class="cta-buttons">
+                    <a href="mailto:wallyson@email.com" class="btn btn-primary">📧 Contacte-me</a>
+                    <a href="https://github.com/WallysonMachadoDeLima" class="btn btn-secondary" target="_blank">💼 Ver Projetos</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>🎓 Formação Académica</h3>
+                    <ul>
+                        <li>Análise e Desenvolvimento de Sistemas (Em Curso)</li>
+                        <li>Especialização em Desenvolvimento Web Full Stack</li>
+                        <li>Certificações em Cloud Computing e DevOps</li>
+                    </ul>
+                </div>
+                <div class="about-card">
+                    <h3>💡 Interesses & Hobbies</h3>
+                    <ul>
+                        <li>Arquitetura de Software e Design Patterns</li>
+                        <li>IoT e Automação Residencial</li>
+                        <li>Jogos Retro e Desenvolvimento de Jogos</li>
+                        <li>Leitura Técnica e Aprendizagem Contínua</li>
+                        <li>Open Source e Comunidade Dev</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="livros">
+            <h2>📚 Livros que Moldaram a minha Carreira</h2>
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>Código Limpo</h3>
+                    <p class="author">Robert C. Martin (Uncle Bob)</p>
+                    <span class="status">✓ Lido & Aplicado</span>
+                </div>
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>Arquitetura Limpa</h3>
+                    <p class="author">Robert C. Martin</p>
+                    <span class="status">✓ Lido & Aplicado</span>
+                </div>
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>Padrões de Projeto (GoF)</h3>
+                    <p class="author">Gang of Four</p>
+                    <span class="status">📖 A Estudar</span>
+                </div>
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>O Programador Pragmático</h3>
+                    <p class="author">Andrew Hunt & David Thomas</p>
+                    <span class="status">✓ Lido</span>
+                </div>
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>Domain-Driven Design</h3>
+                    <p class="author">Eric Evans</p>
+                    <span class="status">📖 A Ler</span>
+                </div>
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>Refatoração</h3>
+                    <p class="author">Martin Fowler</p>
+                    <span class="status">📖 Na Fila</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>🛠️ Stack Tecnológico</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Vue.js</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">JavaScript (ES6+)</span>
+                        <span class="skill-tag">HTML5/CSS3</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">C# / .NET</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">GraphQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Database & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/wallysonmachadodelima" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/WallysonMachadoDeLima" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:wallyson@email.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>© 2026 Wallyson Machado de Lima. Desenvolvido com 💙 e muito ☕</p>
+        </footer>
+    </div>
+
+    <!-- FRANÇAIS -->
+    <div id="lang-fr" class="lang-content">
+        <header>
+            <div class="header-content">
+                <h1>Wallyson Machado</h1>
+                <p class="subtitle">Développeur Full Stack Confirmé</p>
+                <p class="location">📍 Brésil | 🌍 Disponible pour travail à distance</p>
+                <div class="cta-buttons">
+                    <a href="mailto:wallyson@email.com" class="btn btn-primary">📧 Me Contacter</a>
+                    <a href="https://github.com/WallysonMachadoDeLima" class="btn btn-secondary" target="_blank">💼 Voir Projets</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="sobre">
+            <h2>À Propos de Moi</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>🎓 Formation Académique</h3>
+                    <ul>
+                        <li>Analyse et Développement de Systèmes (En Cours)</li>
+                        <li>Spécialisation en Développement Web Full Stack</li>
+                        <li>Certifications en Cloud Computing et DevOps</li>
+                    </ul>
+                </div>
+                <div class="about-card">
+                    <h3>💡 Intérêts & Loisirs</h3>
+                    <ul>
+                        <li>Architecture Logicielle et Design Patterns</li>
+                        <li>IoT et Domotique</li>
+                        <li>Jeux Rétro et Développement de Jeux</li>
+                        <li>Lecture Technique et Apprentissage Continu</li>
+                        <li>Open Source et Communauté Dev</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="livros">
+            <h2>📚 Livres qui ont Façonné ma Carrière</h2>
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>Clean Code</h3>
+                    <p class="author">Robert C. Martin (Uncle Bob)</p>
+                    <span class="status">✓ Lu & Appliqué</span>
+                </div>
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>Clean Architecture</h3>
+                    <p class="author">Robert C. Martin</p>
+                    <span class="status">✓ Lu & Appliqué</span>
+                </div>
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>Design Patterns (GoF)</h3>
+                    <p class="author">Gang of Four</p>
+                    <span class="status">📖 En Étude</span>
+                </div>
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>The Pragmatic Programmer</h3>
+                    <p class="author">Andrew Hunt & David Thomas</p>
+                    <span class="status">✓ Lu</span>
+                </div>
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>Domain-Driven Design</h3>
+                    <p class="author">Eric Evans</p>
+                    <span class="status">📖 En Cours</span>
+                </div>
+                <div class="book-card">
+                    <div class="icon">📖</div>
+                    <h3>Refactoring</h3>
+                    <p class="author">Martin Fowler</p>
+                    <span class="status">📖 En Attente</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>🛠️ Stack Technologique</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Vue.js</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">JavaScript (ES6+)</span>
+                        <span class="skill-tag">HTML5/CSS3</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">C# / .NET</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">GraphQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Database & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/wallysonmachadodelima" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/WallysonMachadoDeLima" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:wallyson@email.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>© 2026 Wallyson Machado de Lima. Développé avec 💙 et beaucoup de ☕</p>
+        </footer>
+    </div>
+
     <script>
         function changeLang(lang, btn) {
-            // Hide all languages
             document.querySelectorAll('.lang-content').forEach(el => {
                 el.classList.remove('active');
             });
-            
-            // Remove active from all buttons
             document.querySelectorAll('.lang-btn').forEach(b => {
                 b.classList.remove('active');
             });
-            
-            // Show selected language
             document.getElementById('lang-' + lang).classList.add('active');
-            
-            // Add active to clicked button
-            if (btn) {
-                btn.classList.add('active');
-            }
+            if (btn) btn.classList.add('active');
         }
     </script>
 </body>
